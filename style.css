@@ -1,21 +1,48 @@
-:root {
-    --grid-cols: 1;
-    --grid-rows: 1;
-  }
-  
-#container {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
-}
-  
-.grid-item {
-    padding: 1em;
-    border: 1px solid black;
-    text-align: center;
-    height: 40px;
-    width: 40px;
-    
+* {
+    box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 400px;
+} 
+
+.grid-item {
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+}
+
+.hover {
+    color: white;
+    background-color: black;
+}
+
+button {
+    height: auto;
+    width: 100px
+}
+
+  
+  /* .container>div {
+    border: 1px solid black;
+    height: 25px;
+    width: 25px;
+  } */
+  
+  /* .container>div:nth-child(16n + 1) {
+    width: 100%;
+    border: 0;
+    height: 0;
+  } */
