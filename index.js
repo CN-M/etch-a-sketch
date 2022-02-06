@@ -1,7 +1,6 @@
 const container = document.querySelector('.container');
 
-let humanChoice = 16
-
+// Creating function to make blocks
 function makeRows(dimension) {
   for (let c = 0; c < dimension*dimension; c++){
     cell = document.createElement('div');
@@ -9,7 +8,7 @@ function makeRows(dimension) {
     container.appendChild(cell);
   }
 }
-makeRows(humanChoice);
+makeRows(16);
 
 const btn = document.querySelector('button');
 btn.addEventListener('click', function(){
