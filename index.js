@@ -8,13 +8,13 @@ function makeRows(dimension) {
     container.appendChild(cell);
   }
 }
-makeRows(16);
+makeRows(20);
 
 const btn = document.querySelector('button');
 btn.addEventListener('click', function(){
   items.forEach(item => item.classList.remove('hover'))
-  dimensions = prompt('How many dimensions you want?')
-  console.log(dimensions)
+  // dimensions = prompt('How many dimensions you want?')
+  // console.log(dimensions)
 })
 
 const items = document.querySelectorAll('.grid-item');
