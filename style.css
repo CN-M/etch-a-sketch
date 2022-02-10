@@ -5,23 +5,30 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 100px;
 
+}
+
+html, body {
+    margin: 0%;
+    height: 100%;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
+    /* overflow: hidden; */
     height: 400px;
     width: 400px;
 } 
 
 .grid-item {
+    display: flex;
     border: 1px solid black;
     width: 25px;
     height: 25px;
+    /* flex-shrink: 1; */
 }
 
 .hover {
@@ -35,15 +42,10 @@ button {
     margin: 10px;
 }
 
-  
-  /* .container>div {
-    border: 1px solid black;
-    height: 25px;
-    width: 25px;
-  } */
-  
-  /* .container>div:nth-child(16n + 1) {
-    width: 100%;
-    border: 0;
-    height: 0;
-  } */
+
+.footer {
+    border-top: 1px solid gray;
+    padding: .5em;
+    background-color: cornflowerblue;
+    color: white;
+}

@@ -8,7 +8,7 @@ function makeRows(dimension) {
     container.appendChild(cell);
   }
 }
-makeRows(20);
+makeRows(16);
 
 const btn = document.querySelector('button');
 btn.addEventListener('click', function(){
