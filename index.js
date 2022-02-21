@@ -32,6 +32,7 @@ btn.addEventListener('click', function(){
   userDimensions = parseInt(prompt('How many dimensions do you want?'));
   dimensions = userDimensions
   // dimensions = prompt('How many dimensions you want?')
+  // I'll finish you later
 })
 
 let heightAndWidth = 400/dimensions;
