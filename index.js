@@ -1,40 +1,55 @@
-const container = document.querySelector('.container');
+const container = document.querySelector(".container");
 
-let defaultDimensions = 16;
-let dimensions = defaultDimensions;
+const defaultDimensions = 16;
 
-// const dimensionBtn = document.querySelector('.squares');
-// dimensionBtn.addEventListener('click', function (){
-//   userDimensions = parseInt(prompt('How many dimensions do you want?'));
-//   dimensions = userDimensions
-
-// })
-
-// Creating function to make blocks
-function makeRows(dimension) {
-  for (let c = 0; c < dimension*dimension; c++){
-    cell = document.createElement('div');
-    cell.className = 'grid-item';
+// function to make blocks
+function makeGrids(dimension) {
+  for (let i = 0; i < dimension * dimension; i++) {
+    cell = document.createElement("div");
+    cell.className = "grid-item";
     container.appendChild(cell);
+  }
+
+  let heightAndWidth = 400 / dimension;
+  const grids = document.querySelectorAll(".grid-item");
+  grids.forEach(
+    (grid) =>
+      (grid.style.cssText = `height: ${heightAndWidth}px; width: ${heightAndWidth}px`)
+  );
+
+  const items = document.querySelectorAll(".grid-item");
+  items.forEach((item) =>
+    item.addEventListener("mouseover", function () {
+      this.classList.add("hover");
+    })
+  );
+}
+
+// function to clear grids
+function clearGrids() {
+  const items = document.querySelectorAll(".grid-item");
+  items.forEach((item) => item.classList.remove("hover"));
+}
+
+// function to clear container
+function clearContainer() {
+  const grids = document.querySelectorAll(".grid-item");
+  grids.forEach((grid) => grid.remove());
+}
+
+// function to add grids
+function addGrids() {
+  const userDimensions = parseInt(prompt("How many dimensions do you want?"));
+  if (userDimensions > 0) {
+    clearContainer();
+    makeGrids(userDimensions);
   }
 }
 
-makeRows(dimensions);
+const clearBtn = document.querySelector(".clear");
+clearBtn.addEventListener("click", clearGrids);
 
-const items = document.querySelectorAll('.grid-item');
-items.forEach(item => item.addEventListener('mouseover', function() {
-  this.classList.add('hover')
-}))
-userDimensions = 0
-const btn = document.querySelector('.clear');
-btn.addEventListener('click', function(){
-  items.forEach(item => item.classList.remove('hover'))
-  userDimensions = parseInt(prompt('How many dimensions do you want?'));
-  dimensions = userDimensions
-  // dimensions = prompt('How many dimensions you want?')
-  // I'll finish you later
-})
+const dimensionBtn = document.querySelector(".squares");
+dimensionBtn.addEventListener("click", addGrids);
 
-let heightAndWidth = 400/dimensions;
-const grids = document.querySelectorAll('.grid-item');
-grids.forEach(grid => grid.style.cssText = `height: ${heightAndWidth}px; width: ${heightAndWidth}px`)
+makeGrids(defaultDimensions);
